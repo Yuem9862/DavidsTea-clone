@@ -11,38 +11,56 @@
       content="Buy the best loose leaf tea at YUEMINsTEA. A clone project of DAVIDsTEA https://www.davidstea.com/ca_en/home/"
     />
 
-    <!-- title icon -->
+    <!-- logo icons -->
     <link rel="icon" href="./img/icon.png" />
-
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <!-- css stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- policies-->
+    <!------------------ policies ------------------>
     <div class="section policies-container">
       <div class="policies"></div>
     </div>
-    <!-- end of order policy-->
+    <!------------------ end of order policy------------------>
 
-    <!-- navigation bar -->
-    <nav class="section">
+    <!------------------ navigation bar ------------------>
+    <nav class="section navbar">
       <h1 class="logo">DAVIDsTEA</h1>
-      <!-- <ul>
-            <li>tea</li>
-            <li>wellness</li>
-            <li>matcha</li>
-            <li>subscription</li>
-            <li>teaware</li>
-            <li>gifts</li>
-            <li style="color: red">sale</li>
-            <li>explore</li>
-          </ul> -->
-      <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! drop down menue to be added  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    </nav>
-    <!-- end of navigation bar -->
+      <ul class="nav-icons">
+        <li>
+          <i class="fas fa-magnifying-glass"></i>
+        </li>
+        <li>
+          <i class="fa-solid fa-user"></i>
+        </li>
+        <li>
+          <i class="fa-solid fa-bag-shopping cart-icon"
+            ><div class="cart-number"><span>0</span></div></i
+          >
+        </li>
+        <li>
+          <button id="menu-bar-button" class="btn"><i class="fa-solid fa-bars" ></i>
+        </li></button>
+      </ul>
 
-    <div class="placeholder"></div>
+      <!-- <i class="fa-solid fa-xmark"></i> -->
+
+      <!-- modal -->
+
+      <ul class="menu-modal" id="menu-modal">
+         
+      </ul>
+    </nav>
+
+    <!------------------ end of navigation bar ------------------>
+
+    <div class="place-holder"></div>
     <!-- hero -->
 
     <!-- choose your tea type -->

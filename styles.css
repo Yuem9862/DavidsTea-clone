@@ -15,7 +15,6 @@
 /* ------------------- global variables ------------------- */
 
 :root {
-  background: #626c87;
   /* colors */
   --primary-main: #01b1af;
   --primary-grey: #626c87;
@@ -44,8 +43,10 @@
   --productFont: "Jaldi", sans-serif;
   --headingFont: "lora", serif;
   --logoFontWeight: 800;
-  --bodyFontSize: 12pt;
-  --productFontSize: 10pt;
+  --logoFontSize: 1.25rem;
+  --headingFontSize: 1rem;
+  --bodyFontSize: 0.75rem;
+  --productFontSize: 0.6rem;
 
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
@@ -86,7 +87,6 @@ h3,
 h4,
 h5 {
   margin: 0;
-  margin-bottom: 1.38rem;
   font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1.3;
@@ -95,7 +95,6 @@ h5 {
 }
 
 h1 {
-  margin-top: 0;
   font-size: 3.052rem;
 }
 
@@ -125,7 +124,6 @@ a:active {
 
 ul {
   list-style-type: none;
-  padding: 0;
 }
 
 img {
@@ -136,34 +134,19 @@ img {
 
 /* ------------------- buttons -------------------  */
 
-/* .btn {
+.btn {
   cursor: pointer;
-  color: var(--white);
-  background: var(--primary-500);
+  background: inherit;
   border: transparent;
-  border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
   padding: 0.375rem 0.75rem;
-  box-shadow: var(--shadow-1);
-  transition: var(--transition);
+
   text-transform: capitalize;
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primary-700);
-  box-shadow: var(--shadow-3);
+  color: var(--primary-main);
 }
-.btn-hipster {
-  color: var(--primary-500);
-  background: var(--primary-200);
-}
-.btn-hipster:hover {
-  color: var(--primary-200);
-  background: var(--primary-700);
-}
-.btn-block {
-  width: 100%;
-} */
 
 /* -------------------  alerts -------------------  */
 
@@ -294,26 +277,94 @@ img {
   transform: translateX(-100%);
 }
 
-/* ------------------- logo ------------------- */
-nav {
+/* ------------------- navbar ------------------- */
+.navbar {
   height: 4rem;
-  width: 100%;
   position: sticky;
   top: 0;
   background: var(--white);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  display: inline-block;
-  height: 100%;
-  padding: auto 0;
-  font-size: 1.5rem;
+  font-size: var(--logoFontSize);
   color: var(--primary-main);
   text-transform: none;
   font-family: var(--logoFont);
   font-weight: var(--logoFontWeight);
 }
 
-.placeholder {
-  height: 120vh;
+.nav-icons {
+  color: var(--black);
+  display: flex;
+  justify-content: space-around;
+  width: 8rem;
+  font-size: var(--headingFontSize);
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-number {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  font-size: 8px;
+  background-color: var(--primary-main);
+  color: var(--white);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+/* modal */
+.menu-modal {
+  position: absolute;
+  top: 3.6rem;
+  background-color: yellow;
+  left: 0;
+  width: 100vw;
+  height: 25rem;
+  padding: 0 3rem 2rem;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: var(--transition);
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-modal-item {
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10px;
+  width: 60vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.menu-modal-item h3 {
+  color: var(--backgroundColor);
+  text-transform: uppercase;
+  font-size: var(--productFontSize);
+  font-family: var(--bodyFont);
+  font-weight: 700;
+}
+.menu-modal-move {
+  transform: translateY(0.4rem);
+  opacity: 1;
+}
+
+.place-holder {
+  height: 1000px;
+  background-color: wheat;
 }

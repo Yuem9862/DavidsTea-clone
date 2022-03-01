@@ -19,7 +19,7 @@ const policies = [
 
 const policiesContainer = document.querySelector(".policies");
 
-const showPolicies = function () {
+const setPolicies = function () {
   //map out the policies
   policiesContainer.innerHTML = policies
     .map(({ promo, action, url }, slideIndex) => {
@@ -64,4 +64,4 @@ const showPolicies = function () {
   window.setInterval(startSlider, 8000);
 };
 
-export default showPolicies;
+export default setPolicies;
