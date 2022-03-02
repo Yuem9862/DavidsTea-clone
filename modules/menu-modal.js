@@ -9,10 +9,30 @@ const menuItems = [
   { key: 8, page: "frequent steeper" },
 ];
 
-const modalList = document.querySelector(".menu-modal");
-
+const setLinks = function () {
+  const linkContainer = document.querySelector(".links");
+  linkContainer.innerHTML = menuItems
+    .map(({ page }) => {
+      if (page === "sale") {
+        return `<li>
+  <a href="#" class="link" style="color:red"}>${page}</a>
+</li>`;
+      } else {
+        return `<li>
+  <a href="#" class="link">${page}</a>
+</li>`;
+      }
+    })
+    .join("");
+};
 const setModal = function () {
-  modalList.innerHTML = menuItems
+  const modalContainer = document.querySelector(".menu-modal");
+  // set the height of the modal container
+  const modalHeight = `${menuItems.length * 3}rem`;
+  modalContainer.style.height = modalHeight;
+
+  //map each of the menu items
+  modalContainer.innerHTML = menuItems
     .map(({ page }) => {
       return ` <li>
           <div class="menu-modal-item">
@@ -24,4 +44,4 @@ const setModal = function () {
     .join("");
 };
 
-export default setModal;
+export { setLinks, setModal };

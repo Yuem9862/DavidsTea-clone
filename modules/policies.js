@@ -17,10 +17,10 @@ const policies = [
   },
 ];
 
-const policiesContainer = document.querySelector(".policies");
-
 const setPolicies = function () {
-  //map out the policies
+  const policiesContainer = document.querySelector(".policies");
+
+  //map each of the policies
   policiesContainer.innerHTML = policies
     .map(({ promo, action, url }, slideIndex) => {
       let position = "next";
