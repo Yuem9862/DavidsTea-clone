@@ -25,12 +25,18 @@ const setLinks = function () {
     })
     .join("");
 };
+
 const setModal = function () {
   const modalContainer = document.querySelector(".menu-modal");
   // set the height of the modal container
-  const modalHeight = `${menuItems.length * 3}rem`;
+  let modalHeight;
+  if (modalContainer.classList.contains("menu-modal-move")) {
+    modalHeight = `${menuItems.length * 3}rem`;
+  } else {
+    modalHeight = "0rem";
+  }
+  console.log(modalHeight);
   modalContainer.style.height = modalHeight;
-
   //map each of the menu items
   modalContainer.innerHTML = menuItems
     .map(({ page }) => {
@@ -43,5 +49,33 @@ const setModal = function () {
     })
     .join("");
 };
+
+// const setModal = function (status) {
+//   const navBar = document.querySelector(".navbar");
+//   const modalContainer = document.createElement("ul");
+//   if (status === "add") {
+//     navBar.appendChild(modalContainer);
+//     modalContainer.classList.add("menu-modal");
+//     modalContainer.style.height = `${menuItems.length * 3}rem`;
+//     modalContainer.innerHTML = menuItems
+//       .map(({ page }) => {
+//         return ` <li>
+//           <div class="menu-modal-item">
+//             <h3>${page}</h3>
+//             <i class="fa-solid fa-angle-right"></i>
+//           </div>
+//         </li>`;
+//       })
+//       .join("");
+//     modalContainer.classList.add("menu-modal.active");
+//   }
+//   if (status === "remove") {
+//     navBar.lastElementChild.remove();
+//   }
+
+//   // } else {
+//   //   modalContainer.remove();
+//   // }
+// };
 
 export { setLinks, setModal };

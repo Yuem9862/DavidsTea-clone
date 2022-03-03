@@ -5,13 +5,12 @@ import { setLinks, setModal } from "./modules/menu-modal.js";
 window.addEventListener("DOMContentLoaded", function () {
   setPolicies();
   setLinks();
-  setModal();
 });
 
 //---------------- toggle menu-modal ----------------
-const modal = document.getElementById("menu-modal");
-
+const modalContainer = document.getElementById("menu-modal");
 const menuButton = document.getElementById("menu-bar-button");
 menuButton.addEventListener("click", function () {
-  modal.classList.toggle("menu-modal-move");
+  modalContainer.classList.toggle("menu-modal-move");
+  setModal();
 });
