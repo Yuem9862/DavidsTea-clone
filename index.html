@@ -63,7 +63,13 @@
 
     <!------------------ hero ------------------>
     <section class="hero">
-      <div class="hero-imgs">
+      <!-- radio buttons -->
+      <input type="radio" name="radio-btn" id="radio1" />
+      <input type="radio" name="radio-btn" id="radio2" />
+      <input type="radio" name="radio-btn" id="radio3" />
+      <!-- end of radio buttons -->
+      <!-- slides -->
+      <div class="hero-imgs first">
         <article class="hero-img-container">
           <div class="hero-img-info">
             <h2>want tea? it's free!</h2>
@@ -76,16 +82,15 @@
           <img
             src="./img/hp1-Free50g-m.jpg"
             alt="shades of matcha"
-            class="hero-img"
+            class="hero-img-1"
           />
         </article>
         <article class="hero-img-container">
           <div class="hero-img-info">
             <h2>
-              fresh-in for spring
+              fresh-in <br />for spring
               <span> <img src="./img/tea-pot.png" alt="teapot emoji" /></span>
             </h2>
-
             <p>
               One of your all-time spring faves is back! Plus, we've got a few
               newbies you might want to check out...
@@ -93,9 +98,9 @@
             <a href="#" class="hero-btn btn">shop collection</a>
           </div>
           <img
-            src="./img/hp1-fresh-collection-m-en.jpg"
+            src="./img/hp1-fresh-collection-m.jpg"
             alt="shades of matcha"
-            class="hero-img"
+            class="hero-img-2"
           />
         </article>
         <article class="hero-img-container">
@@ -110,10 +115,18 @@
           <img
             src="./img/hp1-matcha-collection-m.jpg"
             alt="shades of matcha"
-            class="hero-img"
+            class="hero-img-3"
           />
         </article>
+        <!-- end of slides -->
       </div>
+      <!-- manual navigation -->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+      </div>
+      <!-- end of manual navigation -->
     </section>
     <!------------------ end of hero ------------------>
 

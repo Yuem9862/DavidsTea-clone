@@ -20,7 +20,7 @@ const policies = [
 const setPolicies = function () {
   const policiesContainer = document.querySelector(".policies");
 
-  //map each of the policies
+  //dynamically set up each of the policies
   policiesContainer.innerHTML = policies
     .map(({ promo, action, url }, slideIndex) => {
       let position = "next";
@@ -42,7 +42,7 @@ const setPolicies = function () {
     })
     .join("");
 
-  //set up the slider
+  //set up the slider using classes
   const startSlider = () => {
     const active = document.querySelector(".active");
     const last = document.querySelector(".last");

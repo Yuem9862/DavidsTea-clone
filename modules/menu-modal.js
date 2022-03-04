@@ -31,18 +31,18 @@ const setModal = function () {
   // set the height of the modal container
   let modalHeight;
   if (modalContainer.classList.contains("menu-modal-move")) {
-    modalHeight = `${menuItems.length * 3}rem`;
+    modalHeight = `${menuItems.length * 5}rem`;
   } else {
     modalHeight = "0rem";
   }
-  console.log(modalHeight);
+  //dynamically set up the height
   modalContainer.style.height = modalHeight;
-  //map each of the menu items
+  //dynamically set up the menu items
   modalContainer.innerHTML = menuItems
     .map(({ page }) => {
       return ` <li>
           <div class="menu-modal-item">
-            <h3>${page}</h3>
+            <h4>${page}</h4>
             <i class="fa-solid fa-angle-right"></i>
           </div>
         </li>`;
