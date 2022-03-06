@@ -192,11 +192,11 @@ img {
 
 @media screen and (min-width: 1200px) {
   .section-center {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
   }
 }
-
+/* ------------------- others ------------------- */
 .hide {
   display: none;
 }
@@ -204,7 +204,11 @@ img {
   height: 1000px;
   background-color: wheat;
 }
-
+.disclaimer {
+  position: absolute;
+  margin-top: 1rem;
+  font-size: 8pt;
+}
 /* ------------------- policies ------------------- */
 .policies-container {
   background: var(--primary-main);
@@ -431,10 +435,6 @@ label:hover {
 .hero-img-info p {
   font-size: var(--productFont);
 }
-.hero-img-info > .disclaimer {
-  margin-top: 1rem;
-  font-size: 8pt;
-}
 
 .hero-img-info img {
   display: inline;
@@ -593,8 +593,7 @@ label:hover {
 /* ------------------- choose your tea type ------------------- */
 .choose {
   background-color: var(--primary-background);
-  padding-top: 4vh;
-  padding-bottom: 4vh;
+  padding-top: 2vh;
 }
 .tea-types {
   display: flex;
@@ -602,7 +601,8 @@ label:hover {
   padding: 1.5rem 5rem;
   margin-left: auto;
   margin-right: auto;
-  height: 30vh;
+  min-height: 250px;
+  max-height: 30vh;
   min-width: 1000px;
   max-width: 1500px;
 }
@@ -618,12 +618,14 @@ label:hover {
   align-items: center;
 }
 .tea-btn {
-  border-bottom: 1px solid #2c2c2c;
+  border-bottom: 1px solid var(--black);
   font-size: var(--descFontSize);
   line-height: 1;
   margin-top: 1rem;
 }
-
+.tea-btn:hover {
+  border-bottom: 1px solid var(--primary-main);
+}
 .tea-shadow {
   position: absolute;
   left: 1.5px;
@@ -634,9 +636,6 @@ label:hover {
   .choose {
     overflow-x: scroll;
     overflow-y: hidden;
-  }
-  .tea-types {
-    height: 30vh;
   }
 }
 
@@ -738,6 +737,9 @@ label:hover {
 }
 
 /* ------------------- be part of our community ------------------- */
+.community {
+  overflow: hidden;
+}
 .story-wrapper {
   position: relative;
   display: flex;
@@ -748,17 +750,53 @@ label:hover {
 /* ------------------- shop our feed ------------------- */
 .feed {
   background-color: var(--primary-background);
-  padding-top: 4vh;
-  padding-bottom: 4vh;
+  margin: 3vh 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .feed-btn {
   background: var(--black);
   color: var(--white);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
+
   display: block;
 }
 .feed .hero-btn:hover {
   opacity: 0.9;
+}
+.feed .disclaimer {
+  position: relative;
+  text-align: end;
+}
+.feed-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  --n: 1;
+}
+.feed-img {
+  width: calc((100%) / var(--n));
+  aspect-ratio: 1/1;
+}
+
+@media screen and (min-width: 600px) {
+  .feed-img {
+    --n: 2;
+  }
+}
+@media screen and (min-width: 800px) {
+  .feed-img {
+    --n: 3;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .feed {
+    background-color: var(--primary-background);
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .feed-img {
+    --n: 4;
+  }
 }
