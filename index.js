@@ -1,6 +1,7 @@
 import setPolicies from "./modules/policies.js";
 import { setLinks, setModal } from "./modules/menu-modal.js";
 import { setTeaTypes } from "./modules/tea-types.js";
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.ACCESS_KEY}`;
 // ---------------- dynamic rendering ----------------
 window.addEventListener("DOMContentLoaded", function () {
   setPolicies();
@@ -16,4 +17,12 @@ menuButton.addEventListener("click", function () {
   setModal();
 });
 
-// ---------------- hover effect for the tea types ----------------
+//---------------- slider for the sustainability section ----------------
+const slideController = document.querySelectorAll(".sustain-message > input");
+const slides = document.querySelector(".sustain-products");
+slideController.forEach((controller, index) => {
+  controller.addEventListener("click", function () {
+    const leftMargin = index * 100;
+    slides.style.marginLeft = `-${leftMargin}%`;
+  });
+});

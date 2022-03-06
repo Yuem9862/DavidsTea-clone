@@ -453,8 +453,8 @@ label:hover {
 }
 
 .hero-btn {
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
   text-transform: uppercase;
   font-weight: 600;
   margin-top: 1.5rem;
@@ -464,8 +464,8 @@ label:hover {
 }
 
 .hero-btn:hover {
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
 }
 
 @media screen and (min-width: 1000px) {
@@ -565,6 +565,9 @@ label:hover {
   margin-top: 0.7rem;
   text-transform: uppercase;
   border-bottom: var(--black) 1px solid;
+}
+.shop-btn:hover {
+  border-bottom: var(--primary-main) 1px solid;
 }
 
 .sub-product > .product-info {
@@ -673,6 +676,13 @@ label:hover {
   padding-right: 0;
   line-height: 1.75;
 }
+.sustain .shop-btn {
+  border-bottom: var(--white) 1px solid;
+}
+.sustain .shop-btn:hover {
+  color: var(--black);
+  border-bottom: var(--black) 1px solid;
+}
 .sustain input {
   display: none;
 }
@@ -694,16 +704,6 @@ label:hover {
 }
 .sustain-manual-btn:hover {
   background-color: var(--white);
-}
-
-#radio-sus-1:checked ~ .first {
-  margin-left: 0;
-}
-#radio-sus-2:checked ~ .first {
-  margin-left: -100%;
-}
-#radio-sus-3:checked ~ .first {
-  margin-left: -200%;
 }
 
 @media screen and (min-width: 1000px) {
