@@ -729,8 +729,14 @@ label:hover {
   }
 
   .sustain-products {
+    transform: translateX(0%);
+    width: 100%;
     gap: 1rem;
   }
+  .sustain-product {
+    width: calc(100% - 2rem / 3);
+  }
+
   .sustain-navigation-manual {
     display: none;
   }
