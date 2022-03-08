@@ -25,11 +25,20 @@ menuButton.addEventListener("click", function () {
 
 //---------------- slider for the sustainability section ----------------
 const slideController = document.querySelectorAll(".sustain-message > input");
+const slideLabal = document.querySelectorAll(".sustain-manual-btn");
 const slides = document.querySelector(".sustain-products");
 slideController.forEach((controller, index) => {
   controller.addEventListener("click", function () {
     const leftMargin = index * 100;
     slides.style.marginLeft = `-${leftMargin}%`;
+
+    slideLabal.forEach((label) => {
+      if (label.classList.contains("sustain-btn-clicked")) {
+        label.classList.remove("sustain-btn-clicked");
+      }
+    });
+
+    slideLabal[index].classList.add("sustain-btn-clicked");
   });
 });
 

@@ -413,16 +413,28 @@ label:hover {
   background-color: var(--black);
 }
 
-#radio-hero-1:checked ~ .first {
+#radio-hero-1:checked ~ .hero-imgs {
   margin-left: 0;
 }
 
-#radio-hero-2:checked ~ .first {
+#radio-hero-2:checked ~ .hero-imgs {
   margin-left: -100vw;
 }
-#radio-hero-3:checked ~ .first {
+#radio-hero-3:checked ~ .hero-imgs {
   margin-left: -200vw;
 }
+#radio-hero-1:checked ~ .navigation-manual > #hero-btn-1 {
+  background-color: var(--black);
+}
+
+#radio-hero-2:checked ~ .navigation-manual > #hero-btn-2 {
+  background-color: var(--black);
+}
+
+#radio-hero-3:checked ~ .navigation-manual > #hero-btn-3 {
+  background-color: var(--black);
+}
+
 .hero-img-info {
   position: absolute;
   width: 20rem;
@@ -500,6 +512,18 @@ label:hover {
     border: 1px solid var(--white);
   }
   .manual-btn:hover {
+    background-color: var(--white);
+  }
+
+  #radio-hero-1:checked ~ .navigation-manual > #hero-btn-1 {
+    background-color: var(--white);
+  }
+
+  #radio-hero-2:checked ~ .navigation-manual > #hero-btn-2 {
+    background-color: var(--white);
+  }
+
+  #radio-hero-3:checked ~ .navigation-manual > #hero-btn-3 {
     background-color: var(--white);
   }
 }
@@ -702,6 +726,9 @@ label:hover {
   margin-right: 1rem;
 }
 .sustain-manual-btn:hover {
+  background-color: var(--white);
+}
+.sustain-btn-clicked {
   background-color: var(--white);
 }
 
