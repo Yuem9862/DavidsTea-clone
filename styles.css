@@ -304,9 +304,14 @@ img {
   place-items: center;
 }
 
-/* link */
 .links {
   display: none;
+}
+
+.link:hover {
+  padding-bottom: 0.5rem;
+  color: var(--primary-main);
+  border-bottom: 0.25rem solid var(--primary-main);
 }
 
 @media screen and (min-width: 1000px) {
