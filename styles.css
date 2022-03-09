@@ -759,7 +759,9 @@ label:hover {
   width: calc((100%) / var(--n));
   aspect-ratio: 1/1;
 }
-
+.feed-img:hover {
+  filter: brightness(110%);
+}
 @media screen and (min-width: 600px) {
   .feed-img {
     --n: 2;
