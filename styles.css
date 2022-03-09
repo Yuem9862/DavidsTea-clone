@@ -682,7 +682,7 @@ label:hover {
   overflow: hidden;
 }
 .sustain-message .section-heading {
-  padding-left: 0;
+  padding: 0;
 }
 .sustain-products {
   margin: 1rem auto;
