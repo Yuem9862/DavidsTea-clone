@@ -438,14 +438,15 @@ label:hover {
 .hero-img-info {
   position: absolute;
   width: 20rem;
-  color: var(--white);
 }
 .hero-img-info h2 {
   line-height: 1;
   margin-bottom: 0.75rem;
+  color: var(--white);
 }
 .hero-img-info p {
   font-size: var(--productFont);
+  color: var(--white);
 }
 
 .hero-img-info img {
@@ -465,8 +466,8 @@ label:hover {
 }
 
 .hero-btn {
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   text-transform: uppercase;
   font-weight: 600;
   margin-top: 1.5rem;
@@ -476,8 +477,8 @@ label:hover {
 }
 
 .hero-btn:hover {
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
 }
 
 @media screen and (min-width: 1000px) {
@@ -680,10 +681,8 @@ label:hover {
   padding-top: 1rem;
   overflow: hidden;
 }
-.sustain-message h3 {
-  font-size: var(--headingFontSize);
-  font-weight: 700;
-  margin: 1rem 0;
+.sustain-message .section-heading {
+  padding-left: 0;
 }
 .sustain-products {
   margin: 1rem auto;
@@ -746,7 +745,7 @@ label:hover {
     padding-top: 3rem;
   }
 
-  .sustain-message header {
+  .sustain-message .section-heading {
     width: 50%;
     position: relative;
   }
@@ -792,7 +791,6 @@ label:hover {
   background: var(--black);
   color: var(--white);
   margin: 2rem auto;
-
   display: block;
 }
 .feed .hero-btn:hover {
@@ -831,5 +829,129 @@ label:hover {
   }
   .feed-img {
     --n: 4;
+  }
+}
+/* ------------------- recent mentions ------------------- */
+.mentions {
+  background-color: wheat;
+  margin: 3vh 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ------------------- rewarding programs ------------------- */
+.programs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.program {
+  width: 100%;
+  max-height: 40vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-info {
+  margin-left: var(--padding);
+  position: absolute;
+  z-index: 1;
+}
+
+.program-background {
+  object-fit: cover;
+  z-index: -1;
+}
+.deco-img-container {
+  position: absolute;
+  right: -10vw;
+  transform: rotate(-10deg);
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.program-heading {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.program-body {
+  font-weight: 200;
+  margin-bottom: 1.5rem;
+}
+
+.program-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.program-btn {
+  background: var(--white);
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.program-btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.program-disclaimer {
+  border-bottom: 1px solid var(--black);
+  font-size: var(--descFontSize);
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  line-height: 1.05;
+}
+
+.program-disclaimer:hover {
+  border-bottom: 1px solid var(--primary-main);
+}
+
+@media screen and (min-width: 800px) {
+  .program {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .program:nth-of-type(1) > .program-background {
+    content: url("./img/f-s-d.svg");
+  }
+
+  .program:nth-of-type(2) > .program-background {
+    content: url("./img/Tea-tasting-club-banner-desktop.webp");
+  }
+
+  .program-decor-img {
+    content: url("./img/frequent-steepers-en.svg");
+  }
+
+  .deco-img-container {
+    right: 60%;
+    transform: rotate(0);
+    width: 20%;
+  }
+
+  .program-info {
+    margin-left: 44%;
+  }
+
+  .program-heading {
+    margin-bottom: 0.5rem;
+  }
+
+  .program-signup {
+    flex-direction: row;
+    align-items: center;
   }
 }
