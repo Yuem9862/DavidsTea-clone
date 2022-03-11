@@ -785,10 +785,70 @@ label:hover {
 }
 /* ------------------- recent mentions ------------------- */
 .mentions {
-  background-color: wheat;
   margin: 3vh 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.overflow-hidden {
+  width: 100%;
+  overflow: hidden;
+}
+.mentions input {
+  display: none;
+}
+.media {
+  display: flex;
+  transform: translateX(0);
+  width: 130vw;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+.medium {
+  height: 50%;
+  min-height: 10rem;
+  padding-left: 2em;
+  padding-right: 2em;
+  display: flex;
+  align-items: center;
+}
+.media-navigation-manual {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.media-manual-btn {
+  border: 1px solid var(--black);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.media-manual-btn:not(:last-child) {
+  margin-right: 1rem;
+}
+.media-manual-btn:hover {
+  background-color: var(--black);
+}
+
+#medium-1:checked ~ .media-navigation-manual > #media-btn-1 {
+  background-color: var(--black);
+}
+#medium-2:checked ~ .media-navigation-manual > #media-btn-2 {
+  background-color: var(--black);
+}
+#medium-3:checked ~ .media-navigation-manual > #media-btn-3 {
+  background-color: var(--black);
+}
+#medium-4:checked ~ .media-navigation-manual > #media-btn-4 {
+  background-color: var(--black);
+}
+#medium-5:checked ~ .media-navigation-manual > #media-btn-5 {
+  background-color: var(--black);
+}
+#medium-6:checked ~ .media-navigation-manual > #media-btn-6 {
+  background-color: var(--black);
 }
 
 /* ------------------- rewarding programs ------------------- */
@@ -799,7 +859,6 @@ label:hover {
 }
 .program {
   width: 100%;
-  max-height: 40vh;
   display: flex;
   align-items: center;
   position: relative;
