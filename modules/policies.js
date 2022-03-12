@@ -17,9 +17,8 @@ const policies = [
   },
 ];
 
+const policiesContainer = document.querySelector(".policies");
 const setPolicies = function () {
-  const policiesContainer = document.querySelector(".policies");
-
   //dynamically set up each of the policies
   policiesContainer.innerHTML = policies
     .map(({ promo, action, url }, slideIndex) => {
@@ -41,27 +40,25 @@ const setPolicies = function () {
             </div>`;
     })
     .join("");
-
-  //set up the slider using classes
-  const startSlider = () => {
-    const active = document.querySelector(".active");
-    const last = document.querySelector(".last");
-    let next = active.nextSibling;
-
-    if (!next) {
-      next = policiesContainer.firstElementChild;
-    }
-
-    active.classList.remove(["active"]);
-    last.classList.remove(["last"]);
-    next.classList.remove(["next"]);
-
-    active.classList.add("last");
-    last.classList.add("next");
-    next.classList.add("active");
-  };
-
-  window.setInterval(startSlider, 8000);
 };
 
-export default setPolicies;
+//set up the slider
+const startSlider = () => {
+  const active = document.querySelector(".active");
+  const last = document.querySelector(".last");
+  let next = active.nextSibling;
+
+  if (!next) {
+    next = policiesContainer.firstElementChild;
+  }
+
+  active.classList.remove(["active"]);
+  last.classList.remove(["last"]);
+  next.classList.remove(["next"]);
+
+  active.classList.add("last");
+  last.classList.add("next");
+  next.classList.add("active");
+};
+
+export { setPolicies, startSlider };

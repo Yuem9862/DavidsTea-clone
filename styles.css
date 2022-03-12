@@ -798,8 +798,8 @@ label:hover {
 }
 .media {
   display: flex;
-  transform: translateX(0);
-  width: 130vw;
+  width: 3000px;
+  transform: translateX(3px);
   align-items: center;
   justify-content: space-between;
   transition: var(--transition);

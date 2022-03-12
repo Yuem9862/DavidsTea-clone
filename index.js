@@ -1,4 +1,4 @@
-import setPolicies from "./modules/policies.js";
+import { setPolicies, startSlider } from "./modules/policies.js";
 import { setLinks, setModal } from "./modules/menu-modal.js";
 import { setTeaTypes } from "./modules/tea-types.js";
 import fetchImages from "./modules/feed.js";
@@ -8,11 +8,13 @@ const clientID = `?client_id=${DAVIDS_TEA_ACCESS_KEY}`;
 const query = `&query=drink`;
 const API_ENDPOINT = `${mainURL}${clientID}${query}`;
 
-// ---------------- dynamic rendering ----------------
+// ---------------- dynamic rendering the page----------------
 window.addEventListener("DOMContentLoaded", function () {
   setPolicies();
   setLinks();
   setTeaTypes();
+  //autoplay the slider in the policy section
+  window.setInterval(startSlider, 8000);
 });
 
 //---------------- toggle menu-modal ----------------
@@ -65,25 +67,34 @@ feedButton.addEventListener("click", function () {
 });
 //---------------- slider for the media mentions section ----------------
 const mediaContainer = document.querySelector(".media");
+const divContainer = document.querySelector(".overflow-hidden");
 const mediumElments = document.querySelectorAll(".medium");
+const vogueElement = document.querySelector(".vogue");
 const mediumIndicators = document.querySelectorAll(".mentions input");
-const mediaContainerCenter = window.innerWidth / 2;
+const divCenter = Math.ceil(divContainer.getBoundingClientRect().width / 2);
+
+//set vogue as the start
+
+const startPosition = Math.ceil(
+  vogueElement.getBoundingClientRect().width / 2 + vogueElement.offsetLeft
+);
+const startOffset = Math.round(divCenter - startPosition);
+mediaContainer.style.transform = `translateX(${startOffset}px)`;
 
 // get the index
 mediumIndicators.forEach((indicator, index) => {
   indicator.addEventListener("click", function () {
     // get the mediaDiv at the index
     const selectedMedium = mediumElments[index + 1];
-    console.log(selectedMedium);
-    const elementLocation =
-      selectedMedium.getBoundingClientRect().x / 2 +
-      selectedMedium.getBoundingClientRect().right / 2;
 
+    const elementLocation = Math.ceil(
+      selectedMedium.offsetLeft +
+        selectedMedium.getBoundingClientRect().width / 2
+    );
     // move to left by the mediaDivs[index].location - center
-    const offset = elementLocation - mediaContainerCenter;
-    console.log(elementLocation, mediaContainerCenter, offset);
+    let offset = Math.round(elementLocation - divCenter);
 
-    mediaContainer.style.transform = `translateX(-${offset}px)`;
-    console.log(mediaContainer.style.marginLeft);
+    offset = -offset;
+    mediaContainer.style.transform = `translateX(${offset}px)`;
   });
 });
