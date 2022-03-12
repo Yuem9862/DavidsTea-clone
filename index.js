@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setLinks();
   setTeaTypes();
   //autoplay the slider in the policy section
-  window.setInterval(startSlider, 8000);
+  window.setInterval(startSlider, 4000);
 
   //center the media mentions section
   const startPosition = Math.ceil(
