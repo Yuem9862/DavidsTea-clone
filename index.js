@@ -15,6 +15,13 @@ window.addEventListener("DOMContentLoaded", function () {
   setTeaTypes();
   //autoplay the slider in the policy section
   window.setInterval(startSlider, 8000);
+
+  //center the media mentions section
+  const startPosition = Math.ceil(
+    vogueElement.getBoundingClientRect().width / 2 + vogueElement.offsetLeft
+  );
+  const startOffset = Math.round(divCenter - startPosition);
+  mediaContainer.style.transform = `translateX(${startOffset}px)`;
 });
 
 //---------------- toggle menu-modal ----------------
@@ -73,19 +80,11 @@ const vogueElement = document.querySelector(".vogue");
 const mediumIndicators = document.querySelectorAll(".mentions input");
 const divCenter = Math.ceil(divContainer.getBoundingClientRect().width / 2);
 
-//set vogue as the start
-
-const startPosition = Math.ceil(
-  vogueElement.getBoundingClientRect().width / 2 + vogueElement.offsetLeft
-);
-const startOffset = Math.round(divCenter - startPosition);
-mediaContainer.style.transform = `translateX(${startOffset}px)`;
-
 // get the index
 mediumIndicators.forEach((indicator, index) => {
   indicator.addEventListener("click", function () {
     // get the mediaDiv at the index
-    const selectedMedium = mediumElments[index + 1];
+    const selectedMedium = mediumElments[index + 2];
 
     const elementLocation = Math.ceil(
       selectedMedium.offsetLeft +
