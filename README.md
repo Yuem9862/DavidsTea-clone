@@ -20,6 +20,6 @@
   - float 
 
 ### To-dos
-- Page is not fully responsive on mobile devices => needs to set the viewport in \<meta>
+- Page is not fully responsive on mobile devices => \<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 - Learn more about the CSS selectors
 - Responsive design best practices
