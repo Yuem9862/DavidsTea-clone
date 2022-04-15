@@ -20,6 +20,6 @@
   - float 
 
 ### To-dos
-- Page is not fully responsive on mobile devices => needs to set the viewport in <meta>
+- Page is not fully responsive on mobile devices => needs to set the viewport in \<meta>
 - Learn more about the CSS selectors
 - Responsive design best practices
