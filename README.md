@@ -9,7 +9,7 @@
 - I used 3 different ways to create the carousals/sliders
 
 ### Takeaways
-- Sematic tags in HTML
+- Semantic tags in HTML
 - CSS media query in particular
 - display:none
 - How to center a div
